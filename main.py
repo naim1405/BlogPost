@@ -9,14 +9,14 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentFom
 from flask_gravatar import Gravatar
 from functools import wraps
-
+import psycopg2
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://blog_7arb_user:H5N1PBwn8JX3q4A6HWqLhAeemBgtNQNL@dpg-cec0ntkgqg4ap4adqcgg-a/blog_7arb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://blog_7arb_user:H5N1PBwn8JX3q4A6HWqLhAeemBgtNQNL@dpg-cec0ntkgqg4ap4adqcgg-a.oregon-postgres.render.com/blog_7arb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
